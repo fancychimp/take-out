@@ -13,12 +13,43 @@ h1 {
   position: relative;
   /* display: flex; */
 }
-h3 {
+/* h3 {
   font-family: 'haymakerregular', sans-serif;
   text-align: center;
   font-weight: normal;
   margin: 0;
-  color: #f5a623;
+  color: #427ce7;
   position: relative;
-  /* display: flex; */
+  /* display: flex;
+} */
+
+ul {
+  list-style: none;
+}
+
+.menu {
+
+}
+
+.dish-menu {
+  position: relative;
+  padding: 20px;
+}
+
+.dish-name {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: normal;
+  font-size: 18px;
+  position: relative;
+  text-align: left;
+}
+
+.dish-desc {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: italic;
+  font-size: 18px;
+  position: relative;
+  text-align: left;
 }

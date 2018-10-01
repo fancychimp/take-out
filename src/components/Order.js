@@ -8,7 +8,7 @@ class Order extends React.Component {
 
     render() {
         return (
-            <button onClick={this.props.loadDishes}>
+            <button onClick={ this.props.loadDishes }>
                 Click for your dish
             </button>
         )
