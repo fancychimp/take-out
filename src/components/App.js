@@ -7,11 +7,22 @@ import sampleFood from '../sample-food';
 
 class App extends React.Component {
   state = {
-    dishes: {}
+    dishes: {},
+    order: {}
   };
 
   loadDishes = () => {
     this.setState({ dishes: sampleFood })
+  };
+
+  addDishToOrder = (key) => {
+    // Take a copy of the current order state
+    const order = { ...this.state.order };
+    //
+    order[key] = order[key] + 1 || 1;
+    console.log(order[key]);
+    // Update state
+    this.setState({ order });
   };
 
   render() {
@@ -24,7 +35,8 @@ class App extends React.Component {
           {Object.keys(this.state.dishes).map(key => (
             <Dish
               key={key}
-              details={this.state.dishes[key]} 
+              details={this.state.dishes[key]}
+              addDishToOrder={this.addDishToOrder}
             />
           ))}
         </ul>
