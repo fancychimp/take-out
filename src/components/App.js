@@ -18,6 +18,7 @@ class App extends React.Component {
   addDishToOrder = (key) => {
     // Take a copy of the current order state
     const order = { ...this.state.order };
+    console.log(order);
     //
     order[key] = order[key] + 1 || 1;
     console.log(order[key]);
@@ -35,6 +36,7 @@ class App extends React.Component {
           {Object.keys(this.state.dishes).map(key => (
             <Dish
               key={key}
+              index={key}
               details={this.state.dishes[key]}
               addDishToOrder={this.addDishToOrder}
             />
