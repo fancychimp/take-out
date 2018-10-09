@@ -6,9 +6,22 @@ class Order extends React.Component {
         loadDishes: PropTypes.func
     };
 
+    state = {
+        hideLoadDishButton: false
+    }
+
+    handleHideLoadDishButton = () => {
+        this.setState({ hideLoadDishButton: true })
+    }
+
+    onClick = () => {
+        this.props.loadDishes()
+        this.handleHideLoadDishButton()
+    };
+
     render() {
         return (
-            <button onClick={ this.props.loadDishes }>
+            <button style={this.state.hideLoadDishButton ? { display: 'none' } : {}} onClick={ this.onClick }>
                 Click for your dish
             </button>
         )
