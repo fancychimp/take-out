@@ -2,10 +2,15 @@ import React from 'react';
 import Header from './Header';
 import Dish from './Dish';
 import Order from './Order';
+import PropTypes from 'prop-types';
 import '../css/App.css';
 import sampleFood from '../sample-food';
 
 class App extends React.Component {
+  static propTypes = {
+    history: PropTypes.object
+  };
+
   state = {
     dishes: {},
     order: {}
@@ -26,6 +31,10 @@ class App extends React.Component {
     this.setState({ order });
   };
 
+  goToMyOrder = event => {
+    this.props.history.push(`/myOrder/`);
+  };
+
   render() {
     return (
       <div className="take-out">
@@ -44,6 +53,7 @@ class App extends React.Component {
         </ul>
         <Order
           loadDishes={this.loadDishes}
+          goToMyOrder={this.goToMyOrder}
         />
       </div>
     );

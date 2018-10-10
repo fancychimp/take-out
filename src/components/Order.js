@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class Order extends React.Component {
     static propTypes = {
-        loadDishes: PropTypes.func
+        loadDishes: PropTypes.func,
+        goToMyOrder: PropTypes.func
     };
 
     state = {
@@ -21,9 +22,14 @@ class Order extends React.Component {
 
     render() {
         return (
-            <button style={this.state.hideLoadDishButton ? { display: 'none' } : {}} onClick={ this.onClick }>
-                Click for your dish
-            </button>
+            <div>
+                <button style={this.state.hideLoadDishButton ? { display: 'none' } : {}} onClick={ this.onClick }>
+                    See Today's Dishes
+                </button>
+                <button onClick={ this.props.goToMyOrder }>
+                    My Order
+                </button>
+            </div>
         )
     };
 }
