@@ -15,15 +15,17 @@ class Order extends React.Component {
         this.setState({ hideLoadDishButton: true })
     }
 
-    onClick = () => {
+    onLoadDishClick = () => {
         this.props.loadDishes()
         this.handleHideLoadDishButton()
     };
 
     render() {
+        const styleLoadDishButton = this.state.hideLoadDishButton ? { display: 'none' } : {}
+
         return (
             <div>
-                <button style={this.state.hideLoadDishButton ? { display: 'none' } : {}} onClick={ this.onClick }>
+                <button style={styleLoadDishButton} onClick={ this.onLoadDishClick }>
                     See Today's Dishes
                 </button>
                 <button onClick={ this.props.goToMyOrder }>

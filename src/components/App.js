@@ -5,6 +5,7 @@ import Order from './Order';
 import PropTypes from 'prop-types';
 import '../css/App.css';
 import sampleFood from '../sample-food';
+import ShoppingCart from './ShoppingCart';
 
 class App extends React.Component {
   static propTypes = {
@@ -41,6 +42,7 @@ class App extends React.Component {
         <div className="menu">
           <Header tagline="Create your feeding experience"/>
         </div>
+        
         <ul>
           {Object.keys(this.state.dishes).map(key => (
             <Dish
