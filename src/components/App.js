@@ -33,7 +33,10 @@ class App extends React.Component {
   };
 
   goToMyOrder = event => {
-    this.props.history.push(`/myOrder/`);
+    this.props.history.push({
+      pathname: '/myOrder',
+      state: { order: this.state.order }
+    })
   };
 
   render() {
@@ -42,7 +45,7 @@ class App extends React.Component {
         <div className="menu">
           <Header tagline="Create your feeding experience"/>
         </div>
-        
+
         <ul>
           {Object.keys(this.state.dishes).map(key => (
             <Dish

@@ -7,6 +7,11 @@ class ShoppingCart extends React.Component {
         return (
             <div>
                 My Food Cart
+                {/* {Object.keys(this.props.location.state.order).map(key => (
+                    <ul>
+                        key={this.props.location.state.order[key]}
+                    </ul>
+                ))} */}
             </div>
             
         )
