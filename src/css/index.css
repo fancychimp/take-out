@@ -61,6 +61,26 @@ ul {
   text-align : center;
 }
 
+.added-dish-name {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: normal;
+  font-size: 28px;
+  position: relative;
+  text-align : center;
+  padding-right: 200px;
+}
+
+.added-dish-image {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: normal;
+  font-size: 28px;
+  position: relative;
+  text-align : center;
+  padding-right: 200px;
+}
+
 .dish-desc {
   color: #151d2c;
   font-family: 'Kalam';
