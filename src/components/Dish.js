@@ -24,9 +24,9 @@ class Dish extends React.Component {
                 <div className="dish-desc">
                     {desc}
                 </div>
-                <button onClick={ () => this.props.addDishToOrder(this.props.index) }>
-                    Add to Order
-                </button>
+                <div className="button" onClick={ () => this.props.addDishToOrder(this.props.index) }>
+                    <p className="btnText">Add to Order?</p>
+                </div>
             </li>
         );
     }

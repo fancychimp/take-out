@@ -35,7 +35,10 @@ class App extends React.Component {
   goToMyOrder = event => {
     this.props.history.push({
       pathname: '/myOrder',
-      state: { order: this.state.order }
+      state: { 
+        order: this.state.order,
+        dishes: this.state.dishes
+      }
     })
   };
 
