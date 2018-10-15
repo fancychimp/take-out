@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { formatPrice } from '../helpers'
 
 class Dish extends React.Component {
     static propTypes = {
@@ -14,7 +15,7 @@ class Dish extends React.Component {
     };
 
     render() {
-        const { name, image, desc, price, status } = this.props.details;
+        const { name, image, desc, price } = this.props.details;
         return (
             <li className="dish-menu">
                 <h3 className="dish-name">
@@ -23,6 +24,9 @@ class Dish extends React.Component {
                 <img src={image} alt={name} />
                 <div className="dish-desc">
                     {desc}
+                </div>
+                <div className="dish-price">
+                    {formatPrice(price)}
                 </div>
                 <div className="button" onClick={ () => this.props.addDishToOrder(this.props.index) }>
                     <p className="btnText">Add to Order?</p>

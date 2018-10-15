@@ -101,6 +101,16 @@ ul {
   text-align : center;
 }
 
+.dish-price {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: italic;
+  font-size: 21px;
+  padding-top: 10px;
+  position: relative;
+  text-align : center;
+}
+
 .tagline {
   font-size: 18px;
   font-style: italic;
