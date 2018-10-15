@@ -55,30 +55,41 @@ ul {
 .dish-name {
   color: #151d2c;
   font-family: 'Kalam';
-  font-style: normal;
-  font-size: 28px;
+  font-style: italic;
+  font-size: 38px;
   position: relative;
   text-align : center;
+}
+
+.cart-tagline {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: italic;
+  font-size: 38px;
+  position: relative;
+  padding-top: 80px;
+}
+
+.added-dish {
+  padding-top: 50px;
 }
 
 .added-dish-name {
   color: #151d2c;
   font-family: 'Kalam';
-  font-style: normal;
-  font-size: 28px;
+  font-style: italic;
+  font-size: 18px;
   position: relative;
-  text-align : center;
   padding-right: 200px;
+  padding-left: 50px;
 }
 
 .added-dish-image {
-  color: #151d2c;
   font-family: 'Kalam';
-  font-style: normal;
   font-size: 28px;
   position: relative;
-  text-align : center;
   padding-right: 200px;
+  padding-left: 50px;
 }
 
 .dish-desc {

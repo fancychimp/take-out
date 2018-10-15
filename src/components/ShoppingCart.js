@@ -10,15 +10,12 @@ class ShoppingCart extends React.Component {
                 <div className="menu">
                     <Header tagline="Create your feeding experience"/>
                 </div>
-                <p>My Food Cart</p>
+                <p className="cart-tagline">My Food Cart</p>
                 {Object.keys(this.props.location.state.order).map(key => (
                         key=this.props.location.state.dishes[key],
                         <ul>
-                            <li className="added-dish-name">
-                                {key.name}
-                                <span className="added-dish-image">
-                                    <img src={key.added_image} alt={key.name} />
-                                </span>
+                            <li className="added-dish">
+                                <p className="added-dish-name">{key.name} <img src={key.added_image} className="added-dish-image"  alt={key.name} /></p>
                             </li>
                             <li>
                                 {key.price}
