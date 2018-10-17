@@ -5,7 +5,6 @@ import Order from './Order';
 import PropTypes from 'prop-types';
 import '../css/App.css';
 import sampleFood from '../sample-food';
-import ShoppingCart from './ShoppingCart';
 
 class App extends React.Component {
   static propTypes = {
@@ -24,15 +23,13 @@ class App extends React.Component {
   addDishToOrder = (key) => {
     // Take a copy of the current order state
     const order = { ...this.state.order };
-    console.log(order);
     //
     order[key] = order[key] + 1 || 1;
-    console.log(order[key]);
     // Update state
     this.setState({ order });
   };
 
-  goToMyOrder = event => {
+  goToMyOrder = () => {
     this.props.history.push({
       pathname: '/myOrder',
       state: { 
