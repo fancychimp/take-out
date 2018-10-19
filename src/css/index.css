@@ -61,37 +61,6 @@ ul {
   text-align : center;
 }
 
-.cart-tagline {
-  color: #151d2c;
-  font-family: 'Kalam';
-  font-style: italic;
-  font-size: 38px;
-  position: relative;
-  padding-top: 80px;
-}
-
-.added-dish {
-  padding-top: 50px;
-}
-
-.added-dish-name {
-  color: #151d2c;
-  font-family: 'Kalam';
-  font-style: italic;
-  font-size: 18px;
-  position: relative;
-  padding-right: 200px;
-  padding-left: 50px;
-}
-
-.added-dish-image {
-  font-family: 'Kalam';
-  font-size: 28px;
-  position: relative;
-  padding-right: 200px;
-  padding-left: 50px;
-}
-
 .dish-desc {
   color: #151d2c;
   font-family: 'Kalam';
@@ -109,6 +78,53 @@ ul {
   padding-top: 10px;
   position: relative;
   text-align : center;
+}
+
+.cart-tagline {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: italic;
+  font-size: 38px;
+  position: relative;
+  padding-top: 80px;
+}
+
+.added-dish {
+  padding-top: 50px;
+}
+
+.added-dish-name {
+  color: #151d2c;
+  font-family: 'Kalam';
+  font-style: italic;
+  font-size: 22px;
+  position: relative;
+  padding-right: 40px;
+  padding-top: 50px;
+}
+
+.added-dish-image {
+  font-family: 'Kalam';
+  font-size: 28px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.dish-price {
+  font-family: 'Kalam';
+  font-style: italic;
+  font-size: 20px;
+  position: relative;
+  padding-right: 25px;
+}
+
+.count {
+  font-family: 'Kalam';
+  font-weight: bold;
+  font-size: 16px;
+  font-style: normal;
+  position: relative;
+  padding-right: 25px;
 }
 
 .tagline {

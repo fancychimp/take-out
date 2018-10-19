@@ -3,12 +3,20 @@ import PropTypes from 'prop-types';
 import { formatPrice } from '../helpers'
 
 class CartItem extends React.Component {
+    static propTypes = {
+        details: PropTypes.object,
+        count: PropTypes.number
+    };
+
     render() {
+        const { name, added_image, price } = this.props.item_details;
         return (
             <div>
-                {console.log(this.props.location.state.order)}
-                <p className="added-dish-name">{this.props.location.state.order} <img src={this.props.location.state.order} className="added-dish-image"  alt={this.props.location.state.order} /></p>
+                <p className="added-dish added-dish-name"> {name} <img className="added-dish-image" src={added_image} alt={name} /> </p>
+
+                <p className="dish-price"> <span className="count">{this.props.item_count}</span> {formatPrice(this.props.item_count * price)} </p>
             </div>
+
         )
     }
 };

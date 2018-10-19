@@ -5,7 +5,7 @@ const dishes = {
       added_image: "/images/added_balance_bars.jpg",
       desc:
         "A well balanced breakfast. Or lunch. Or snack.",
-      price: 529,
+      price: 1529,
       status: "available"
     },
   
@@ -35,7 +35,7 @@ const dishes = {
       added_image: "/images/added_chkn_pot_pie.jpg",
       desc:
         "Just like Pillsbury used to make. ",
-      price: 1550,
+      price: 2559,
       status: "available"
     },
   
@@ -55,7 +55,7 @@ const dishes = {
       added_image: "/images/added_butter_chkn.jpg",
       desc:
         "So much butter, so much goodness.",
-      price: 2250,
+      price: 1800,
       status: "available"
     },
   
