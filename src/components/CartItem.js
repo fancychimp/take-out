@@ -4,8 +4,9 @@ import { formatPrice } from '../helpers'
 
 class CartItem extends React.Component {
     static propTypes = {
-        details: PropTypes.object,
-        count: PropTypes.number
+        item_details: PropTypes.object,
+        item_count: PropTypes.number,
+        addDishToOrder: PropTypes.func
     };
 
     render() {
@@ -15,6 +16,10 @@ class CartItem extends React.Component {
                 <p className="added-dish added-dish-name"> {name} <img className="added-dish-image" src={added_image} alt={name} /> </p>
 
                 <p className="dish-price"> <span className="count">{this.props.item_count}</span> {formatPrice(this.props.item_count * price)} </p>
+
+                <div className="button" onClick={ () => this.props.addDishToOrder(this.props.index) }>
+                    <p className="btnText">Add to Order?</p>
+                </div>
             </div>
 
         )

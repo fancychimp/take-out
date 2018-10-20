@@ -14,6 +14,12 @@ class ShoppingCart extends React.Component {
         order: PropTypes.object
     };
 
+    addDishToOrder = (key) => {
+        const order = this.props.location.state.order;
+        order[key] = this.props.location.state.order[key] + 1;
+        this.setState({ order });
+    };
+
     render() {
         return (
             <div>
@@ -25,8 +31,10 @@ class ShoppingCart extends React.Component {
                     {Object.keys(this.props.location.state.order).map(key => (
                         <CartItem
                             key={key}
+                            index={key}
                             item_count={this.props.location.state.order[key]}
                             item_details={this.props.location.state.dishes[key]}
+                            addDishToOrder={this.addDishToOrder}
                         />
                     ))}
                 </ul>
