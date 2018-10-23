@@ -6,7 +6,8 @@ class CartItem extends React.Component {
     static propTypes = {
         item_details: PropTypes.object,
         item_count: PropTypes.number,
-        addDishToOrder: PropTypes.func
+        addDishToOrder: PropTypes.func,
+        removeDishFromOrder: PropTypes.func
     };
 
     render() {
@@ -18,7 +19,10 @@ class CartItem extends React.Component {
                 <p className="dish-price"> <span className="count">{this.props.item_count}</span> {formatPrice(this.props.item_count * price)} </p>
 
                 <div className="button" onClick={ () => this.props.addDishToOrder(this.props.index) }>
-                    <p className="btnText">Add to Order?</p>
+                    <p className="btnText">Add another</p>
+                </div>
+                <div className="button" onClick={ () => this.props.removeDishFromOrder(this.props.index) }>
+                    <p className="btnText">Remove dish</p>
                 </div>
             </div>
 
