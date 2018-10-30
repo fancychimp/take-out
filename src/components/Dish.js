@@ -29,7 +29,7 @@ class Dish extends React.Component {
                     {formatPrice(price)}
                 </div>
                 <div className="button" onClick={ () => this.props.addDishToOrder(this.props.index) }>
-                    <p className="btnText">Add to Order?</p>
+                    <p className="btnText">Add to Order</p>
                 </div>
             </li>
         );

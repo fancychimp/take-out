@@ -8,28 +8,35 @@ class Order extends React.Component {
     };
 
     state = {
-        hideLoadDishButton: false
+        hideLoadDishButton: false,
+        hideMyOrderButton: true
     }
 
     handleHideLoadDishButton = () => {
         this.setState({ hideLoadDishButton: true })
     }
 
+    handleHideMyOrderButton = () => {
+        this.setState({ hideMyOrderButton: false })
+    }
+
     onLoadDishClick = () => {
         this.props.loadDishes()
         this.handleHideLoadDishButton()
+        this.handleHideMyOrderButton()
     };
 
     render() {
         const styleLoadDishButton = this.state.hideLoadDishButton ? { display: 'none' } : {}
+        const styleMyOrderButton = this.state.hideLoadDishButton ? {} : { display: 'none' }
 
         return (
             <div>
-                <button style={styleLoadDishButton} onClick={ this.onLoadDishClick }>
-                    See Today's Dishes
+                <button className="load-dishes btnText" style={styleLoadDishButton} onClick={ this.onLoadDishClick }>
+                    <span> See Today's Dishes </span>
                 </button>
-                <button onClick={ this.props.goToMyOrder }>
-                    My Order
+                <button className="my-order btnText" style={styleMyOrderButton} onClick={ this.props.goToMyOrder }>
+                <span role="img" aria-label="cart">🛒 Checkout</span>
                 </button>
             </div>
         )

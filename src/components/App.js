@@ -21,11 +21,8 @@ class App extends React.Component {
   };
 
   addDishToOrder = (key) => {
-    // Take a copy of the current order state
     const order = { ...this.state.order };
-    //
     order[key] = order[key] + 1 || 1;
-    // Update state
     this.setState({ order });
   };
 
