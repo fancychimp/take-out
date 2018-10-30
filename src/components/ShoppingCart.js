@@ -44,6 +44,17 @@ class ShoppingCart extends React.Component {
     };
 
 
+    goToDishes = () => {
+        this.props.history.push({
+          pathname: '/',
+          state: {
+            order: this.state.order,
+            dishes: this.state.dishes
+          }
+        })
+    };
+
+
     render() {
             // Only render the items if there is anything to render
             if (Object.keys(this.props.location.state.order).length > 0) {
@@ -77,8 +88,8 @@ class ShoppingCart extends React.Component {
                             <Header tagline="Create your feeding experience"/>
                         </div>
                         <p className="cart-tagline">My Food Cart</p>
-                        <p>There's nothing in your cart yet.</p>
-                        <button>Click here to see today's dishes</button>
+                        <p className="empty-tagline">There's nothing in your cart yet.</p>
+                        <button className="empty-dishes btnText" onClick={this.goToDishes}>Go Back</button>
                     </div>
                 )
             }
