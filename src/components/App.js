@@ -4,7 +4,8 @@ import Dish from './Dish';
 import Order from './Order';
 import PropTypes from 'prop-types';
 import '../css/App.css';
-import sampleFood from '../sample-food';
+
+const DISHES_ENDPOINT = 'http://localhost:3001/dishes'
 
 class App extends React.Component {
   static propTypes = {
@@ -17,7 +18,9 @@ class App extends React.Component {
   };
 
   loadDishes = () => {
-    this.setState({ dishes: sampleFood })
+    fetch(DISHES_ENDPOINT).then(response => response.json()).then(sampleFood => {
+      this.setState(sampleFood)
+    })
   };
 
   addDishToOrder = (key) => {

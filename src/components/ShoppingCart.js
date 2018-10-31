@@ -27,7 +27,7 @@ class ShoppingCart extends React.Component {
 
     addDishToOrder = (key) => {
         const order = this.props.location.state.order;
-        order[key] = this.props.location.state.order[key] + 1;
+        order[key] += 1;
         this.setState({ order });
         this.renderMyOrder()
     };
@@ -35,9 +35,9 @@ class ShoppingCart extends React.Component {
     removeDishFromOrder = (key) => {
         const order = this.props.location.state.order;
         if (order[key] === 1) {
-            order[key] = this.props.location.state.order[key].delete;
+            delete order[key];
         } else {
-            order[key] = this.props.location.state.order[key] - 1;
+            order[key] -= 1;
         }
         this.setState({ order });
         this.renderMyOrder()
