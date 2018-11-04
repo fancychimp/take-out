@@ -29,6 +29,18 @@ class App extends React.Component {
     this.setState({ order });
   };
 
+  incrementDishCount = (key) => {
+    const order = this.state.order;
+    order[key] = order[key] + 1 || 1;
+    this.setState({ order });
+  };
+
+  decrementDishCount = (key) => {
+    const order = { ...this.state.order };
+    order[key] = order[key] - 1;
+    this.setState({ order });
+  };
+
   goToMyOrder = () => {
     this.props.history.push({
       pathname: '/myOrder',
@@ -53,6 +65,8 @@ class App extends React.Component {
               index={key}
               details={this.state.dishes[key]}
               addDishToOrder={this.addDishToOrder}
+              incrementDishCount={this.incrementDishCount}
+              decrementDishCount={this.decrementDishCount}
             />
           ))}
         </ul>

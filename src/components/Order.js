@@ -36,7 +36,7 @@ class Order extends React.Component {
                     <span> See Today's Dishes </span>
                 </button>
                 <button className="my-order btnText" style={styleMyOrderButton} onClick={ this.props.goToMyOrder }>
-                <span role="img" aria-label="cart">🛒 Checkout</span>
+                    Checkout
                 </button>
             </div>
         )

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import CartItem from './CartItem';
 import PropTypes from 'prop-types';
+import { formatPrice } from '../helpers'
 
 class ShoppingCart extends React.Component {
     state = {
@@ -56,43 +57,54 @@ class ShoppingCart extends React.Component {
 
 
     render() {
-            // Only render the items if there is anything to render
-            if (Object.keys(this.props.location.state.order).length > 0) {
-                return (
-                    <div>
-                        <div className="menu">
-                            <Header tagline="Create your feeding experience"/>
-                        </div>
-                        <p className="cart-tagline">My Food Cart</p>
-                        <ul>
-                            {Object.keys(this.props.location.state.order).map(key => (
-                                // Do not render the item if it has a 0 count
-                                this.props.location.state.order[key] >= 1 ?
-                                <CartItem
-                                    key={key}
-                                    index={key}
-                                    item_count={this.props.location.state.order[key]}
-                                    item_details={this.props.location.state.dishes[key]}
-                                    addDishToOrder={this.addDishToOrder}
-                                    removeDishFromOrder={this.removeDishFromOrder}
-                                    renderMyOrder={this.renderMyOrder}
-                                />  : ''
-                            ))}
-                        </ul>
+        const orderIds = Object.keys(this.props.location.state.order)
+        console.log(orderIds)
+        const total = orderIds.reduce((prevTotal, key) => {
+            const dish = this.props.location.state.dishes[key];
+            const count = this.props.location.state.order[key];
+            return prevTotal + count * dish.price;
+        }, 0);
+        console.log(total)
+        // Only render the items if there is anything to render
+        if (Object.keys(this.props.location.state.order).length > 0) {
+            return (
+                <div>
+                    <div className="menu">
+                        <Header tagline="Create your feeding experience"/>
                     </div>
-                )
-            } else {
-                return (
-                    <div>
-                        <div className="menu">
-                            <Header tagline="Create your feeding experience"/>
-                        </div>
-                        <p className="cart-tagline">My Food Cart</p>
-                        <p className="empty-tagline">There's nothing in your cart yet.</p>
-                        <button className="empty-dishes btnText" onClick={this.goToDishes}>Go Back</button>
+                    <p className="cart-tagline">My Food Cart</p>
+                    <ul>
+                        {Object.keys(this.props.location.state.order).map(key => (
+                            // Do not render the item if it has a 0 count
+                            this.props.location.state.order[key] >= 1 ?
+                            <CartItem
+                                key={key}
+                                index={key}
+                                item_count={this.props.location.state.order[key]}
+                                item_details={this.props.location.state.dishes[key]}
+                                addDishToOrder={this.addDishToOrder}
+                                removeDishFromOrder={this.removeDishFromOrder}
+                                renderMyOrder={this.renderMyOrder}
+                            />  : ''
+                        ))}
+                    </ul>
+                    <div className="total">
+                        Total:  {formatPrice(total)}
                     </div>
-                )
-            }
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <div className="menu">
+                        <Header tagline="Create your feeding experience"/>
+                    </div>
+                    <p className="cart-tagline">My Food Cart</p>
+                    <p className="empty-tagline">There's nothing in your cart yet.</p>
+                    <button className="empty-dishes btnText" onClick={this.goToDishes}>Go Back</button>
+                </div>
+            )
+        }
     }
 };
 
