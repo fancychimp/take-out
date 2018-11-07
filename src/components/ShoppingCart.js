@@ -55,6 +55,16 @@ class ShoppingCart extends React.Component {
         })
     };
 
+    goToPayment = () => {
+        this.props.history.push({
+          pathname: '/checkout',
+          state: {
+            order: this.state.order,
+            dishes: this.state.dishes
+          }
+        })
+    };
+
 
     render() {
         const orderIds = Object.keys(this.props.location.state.order)
@@ -92,7 +102,7 @@ class ShoppingCart extends React.Component {
                         Total:  {formatPrice(total)}
                     </div>
                     <div onClick={this.handlePayButton}>
-                        <p className="shopping-cart-btn pay-order btnText">Pay for order</p>
+                        <p className="shopping-cart-btn pay-order btnText" onClick={this.goToPayment}>Pay for order</p>
                     </div>
                 </div>
             )

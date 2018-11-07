@@ -15,7 +15,7 @@ class CartItem extends React.Component {
         return (
             <div>
                 <p className="added-dish added-dish-name"> {name} <img className="added-dish-image" src={added_image} alt={name} /> </p>
-
+                <div className="dish">
                 <p className="dish-price"> <span className="count">{this.props.item_count}</span> {formatPrice(this.props.item_count * price)} </p>
 
                 <div className="shopping-cart-btn" onClick={ () => this.props.addDishToOrder(this.props.index) }>
@@ -23,6 +23,7 @@ class CartItem extends React.Component {
                 </div>
                 <div className="shopping-cart-btn" onClick={ () => this.props.removeDishFromOrder(this.props.index) }>
                     <p className="btnText">Remove dish</p>
+                </div>
                 </div>
             </div>
 
