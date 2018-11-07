@@ -149,12 +149,15 @@ ul {
 }
 
 .cart-tagline {
-  color: #151d2c;
+  color: black;
   font-family: 'Kalam';
   font-style: italic;
-  font-size: 38px;
+  font-size: 23px;
+  font-weight: bold;
   position: relative;
-  padding-top: 80px;
+  padding-top: 40px;
+  padding-right: 85px;
+  text-decoration: underline;
 }
 
 .empty-tagline {

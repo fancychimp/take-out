@@ -72,7 +72,7 @@ class ShoppingCart extends React.Component {
                     <div className="menu">
                         <Header tagline="Create your feeding experience"/>
                     </div>
-                    <p className="cart-tagline">My Food Cart</p>
+                    <p className="cart-tagline">Order summary</p>
                     <ul>
                         {Object.keys(this.props.location.state.order).map(key => (
                             // Do not render the item if it has a 0 count
