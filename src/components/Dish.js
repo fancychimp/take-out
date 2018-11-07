@@ -13,8 +13,17 @@ class Dish extends React.Component {
         }),
         addDishToOrder: PropTypes.func,
         incrementDishCount: PropTypes.func,
-        decrementDishCount: PropTypes.func
+        decrementDishCount: PropTypes.func,
+        dishOrder: PropTypes.number
     };
+
+    // state = {
+    //     dishOrder: ''
+    // };
+
+    // handleChange(event) {
+    //     this.setState({value : event.target.value});
+    // };
 
     render() {
         const { name, image, desc, price } = this.props.details;
@@ -36,14 +45,14 @@ class Dish extends React.Component {
                 <div className="input-group">
                     <span className="input-group-button"></span>
                     <button type="button" className="btn-number" datatype="minus" onClick={ () => this.props.decrementDishCount(this.props.index) }>
-                        <span className="glyphicon glyphicon-minus">
+                        <span className="minus">
                             &#45;
                         </span>
                     </button>
-                    <input type="text" value="1" min="1"></input>
+                    <input type="text" className='input-value' defaultValue={this.props.dishOrder} placeholder='0'></input>
                     <span className="input-group-button"></span>
                     <button type="button" className="btn-number" datatype="plus" onClick={ () => this.props.incrementDishCount(this.props.index) }>
-                        <span className="glyphicon glyphicon-plus">
+                        <span className="plus">
                             &#43;
                         </span>
                     </button>

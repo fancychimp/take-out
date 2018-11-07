@@ -23,11 +23,11 @@ class App extends React.Component {
     })
   };
 
-  addDishToOrder = (key) => {
-    const order = { ...this.state.order };
-    order[key] = order[key] + 1 || 1;
-    this.setState({ order });
-  };
+  // addDishToOrder = (key) => {
+  //   const order = { ...this.state.order };
+  //   order[key] = order[key] + 1 || 1;
+  //   this.setState({ order });
+  // };
 
   incrementDishCount = (key) => {
     const order = this.state.order;
@@ -64,7 +64,8 @@ class App extends React.Component {
               key={key}
               index={key}
               details={this.state.dishes[key]}
-              addDishToOrder={this.addDishToOrder}
+              dishOrder={this.state.order[key]}
+              addDishToOrder={this.incrementDishCount}
               incrementDishCount={this.incrementDishCount}
               decrementDishCount={this.decrementDishCount}
             />
