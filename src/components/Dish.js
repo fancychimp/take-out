@@ -44,15 +44,15 @@ class Dish extends React.Component {
                 </div>
                 <div className="input-group">
                     <span className="input-group-button"></span>
-                    <button type="button" className="btn-number" datatype="minus" onClick={ () => this.props.decrementDishCount(this.props.index) }>
-                        <span className="minus">
+                    <button type="button" className="button btn-number" datatype="minus" onClick={ () => this.props.decrementDishCount(this.props.index) }>
+                        <span className="minus btnText">
                             &#45;
                         </span>
                     </button>
                     <input type="text" className='input-value' defaultValue={this.props.dishOrder} placeholder='0'></input>
                     <span className="input-group-button"></span>
-                    <button type="button" className="btn-number" datatype="plus" onClick={ () => this.props.incrementDishCount(this.props.index) }>
-                        <span className="plus">
+                    <button type="button" className="button btn-number" datatype="plus" onClick={ () => this.props.incrementDishCount(this.props.index) }>
+                        <span className="plus btnText">
                             &#43;
                         </span>
                     </button>

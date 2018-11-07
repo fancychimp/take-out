@@ -91,6 +91,9 @@ class ShoppingCart extends React.Component {
                     <div className="total">
                         Total:  {formatPrice(total)}
                     </div>
+                    <div onClick={this.handlePayButton}>
+                        <p className="shopping-cart-btn pay-order btnText">Pay for order</p>
+                    </div>
                 </div>
             )
         } else {
@@ -99,7 +102,7 @@ class ShoppingCart extends React.Component {
                     <div className="menu">
                         <Header tagline="Create your feeding experience"/>
                     </div>
-                    <p className="cart-tagline">My Food Cart</p>
+                    <p className="cart-tagline">Order summary</p>
                     <p className="empty-tagline">There's nothing in your cart yet.</p>
                     <button className="empty-dishes btnText" onClick={this.goToDishes}>Go Back</button>
                 </div>

@@ -18,10 +18,10 @@ class CartItem extends React.Component {
 
                 <p className="dish-price"> <span className="count">{this.props.item_count}</span> {formatPrice(this.props.item_count * price)} </p>
 
-                <div className="dish-count-button" onClick={ () => this.props.addDishToOrder(this.props.index) }>
+                <div className="shopping-cart-btn" onClick={ () => this.props.addDishToOrder(this.props.index) }>
                     <p className="btnText">Add another</p>
                 </div>
-                <div className="dish-count-button" onClick={ () => this.props.removeDishFromOrder(this.props.index) }>
+                <div className="shopping-cart-btn" onClick={ () => this.props.removeDishFromOrder(this.props.index) }>
                     <p className="btnText">Remove dish</p>
                 </div>
             </div>
